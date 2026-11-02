@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>რეგისტრაცია | Food House</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/auth.js" defer></script>
+    <script src="js/common.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                Food<span>House.</span>
+            </a>
+
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="მენიუს გახსნა"
+                aria-controls="navMenu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu" aria-label="მთავარი ნავიგაცია">
+                <a href="index.html">მთავარი</a>
+                <a href="menu.html">მენიუ</a>
+
+                <a href="orders.html" class="orders-link">
+                    ჩემი შეკვეთები
+                    <span
+                        class="orders-badge"
+                        id="ordersBadge"
+                        role="status"
+                        aria-live="polite"
+                        hidden
+                    ></span>
+                </a>
+
+                <div class="nav-auth" id="authArea">
+                    <a href="login.html" class="button button-small button-outline">
+                        შესვლა
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="auth-page">
+        <section class="auth-card" aria-labelledby="registerTitle">
+            <div class="auth-heading">
+                <p class="eyebrow">შემოუერთდი FOOD HOUSE-ს</p>
+                <h1 id="registerTitle">შექმენი ანგარიში</h1>
+                <p>შენი საყვარელი კერძები რამდენიმე ნაბიჯში.</p>
+            </div>
+
+            <form id="registerForm" class="auth-form">
+                <div class="form-field">
+                    <label for="registerName">სახელი</label>
+                    <input
+                        type="text"
+                        id="registerName"
+                        name="name"
+                        placeholder="შენი სახელი"
+                        autocomplete="name"
+                        minlength="2"
+                        maxlength="50"
+                        required
+                    >
+                </div>
+
+                <div class="form-field">
+                    <label for="registerEmail">ელფოსტა</label>
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        name="email"
+                        placeholder="name@example.com"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-field">
+                    <label for="registerPassword">პაროლი</label>
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        name="password"
+                        placeholder="მინიმუმ 8 სიმბოლო"
+                        autocomplete="new-password"
+                        minlength="8"
+                        aria-describedby="passwordHint"
+                        required
+                    >
+                    <small id="passwordHint">
+                        გამოიყენე მინიმუმ 8 სიმბოლო.
+                    </small>
+                </div>
+
+                <div class="form-field">
+                    <label for="confirmPassword">გაიმეორე პაროლი</label>
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="ხელახლა შეიყვანე პაროლი"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+                </div>
+
+                <p
+                    id="registerMessage"
+                    class="form-message"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+
+                <button type="submit" class="button button-primary auth-submit">
+                    ანგარიშის შექმნა
+                </button>
+
+                <p class="auth-switch">
+                    უკვე გაქვს ანგარიში?
+                    <a href="login.html">შესვლა</a>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <a href="index.html" class="logo">
+                Food<span>House.</span>
+            </a>
+
+            <p>
+                © <span id="currentYear"></span>
+                Food House. ყველა უფლება დაცულია.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

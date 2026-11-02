@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>კერძის დეტალები | Food House</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="js/auth.js" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/common.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/pages.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-content">
+        <a class="logo" href="index.html">Food House</a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="მენიუს გახსნა"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+        <nav class="nav-menu" id="navMenu">
+          <a href="index.html">მთავარი</a>
+          <a href="menu.html">მენიუ</a>
+          <a href="orders.html">ჩემი შეკვეთები</a>
+          <a href="login.html">შესვლა</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container details-page">
+      <a class="back-link" href="menu.html">← მენიუში დაბრუნება</a>
+
+      <section id="dishDetails" class="dish-details">
+        <p>კერძის ინფორმაცია იტვირთება...</p>
+      </section>
+
+      <p id="detailsMessage" class="details-message" role="status"></p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="currentYear"></span> Food House</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ადმინის პანელი | Food House</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="js/auth.js" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/common.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/pages.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-content">
+        <a class="logo" href="index.html">Food House</a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="მენიუს გახსნა"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+        <nav class="nav-menu" id="navMenu">
+          <a href="index.html">მთავარი</a>
+          <a href="menu.html">მენიუ</a>
+          <a href="orders.html">შეკვეთები</a>
+          <a href="login.html">შესვლა</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container admin-page">
+      <section class="admin-heading">
+        <h1>ადმინის პანელი</h1>
+        <p>აქ შეგიძლია მართო რესტორნის მენიუ.</p>
+      </section>
+
+      <section class="admin-form-section">
+        <h2 id="adminFormTitle">ახალი კერძის დამატება</h2>
+
+        <form id="dishForm">
+          <input type="hidden" id="editDishId" />
+
+          <label for="dishName">კერძის სახელი</label>
+          <input type="text" id="dishName" required maxlength="80" />
+
+          <label for="dishCategory">კატეგორია</label>
+          <select id="dishCategory" required>
+            <option value="ძირითადი კერძი">ძირითადი კერძი</option>
+            <option value="სალათი">სალათი</option>
+            <option value="დესერტი">დესერტი</option>
+            <option value="სასმელი">სასმელი</option>
+          </select>
+
+          <label for="dishPrice">ფასი (₾)</label>
+          <input
+            type="number"
+            id="dishPrice"
+            min="0.01"
+            max="10000"
+            step="0.01"
+            required
+          />
+
+          <label for="dishDescription">აღწერა</label>
+          <textarea
+            id="dishDescription"
+            rows="4"
+            maxlength="500"
+            required
+          ></textarea>
+
+          <label for="dishImage">სურათის URL</label>
+          <input
+            type="url"
+            id="dishImage"
+            placeholder="https://example.com/food.webp"
+            required
+          />
+
+          <label class="admin-checkbox">
+            <input type="checkbox" id="dishVegetarian" />
+            ვეგეტარიანული კერძია
+          </label>
+
+          <div class="admin-form-actions">
+            <button type="submit" class="auth-button" id="saveDishButton">
+              კერძის დამატება
+            </button>
+
+            <button
+              type="button"
+              class="cancel-edit-button"
+              id="cancelEditButton"
+              hidden
+            >
+              გაუქმება
+            </button>
+          </div>
+
+          <p id="adminMessage" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="admin-dishes-section">
+        <h2>მენიუს მართვა</h2>
+        <p>კერძების რაოდენობა: <strong id="adminDishCount">0</strong></p>
+        <div id="adminDishList" class="admin-dish-list"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="currentYear"></span> Food House</p>
+      </div>
+    </footer>
+  </body>
+</html>

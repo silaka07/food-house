@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Food House — გემრიელი კერძები, ახალი ინგრედიენტები და მარტივი შეკვეთა."
+    />
+
+    <title>მთავარი | Food House</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="js/auth.js" defer></script>
+    <script src="js/common.js" defer></script>
+    <script src="js/cart.js" defer></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-content">
+        <a href="index.html" class="logo" aria-label="Food House — მთავარი">
+          Food<span>House.</span>
+        </a>
+
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="მენიუს გახსნა"
+          aria-controls="navMenu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav-menu" id="navMenu" aria-label="მთავარი ნავიგაცია">
+          <a href="index.html" aria-current="page">მთავარი</a>
+          <a href="menu.html">მენიუ</a>
+
+          <a href="orders.html" class="orders-link">
+            ჩემი შეკვეთები
+
+            <span
+              class="orders-badge"
+              id="ordersBadge"
+              role="status"
+              aria-live="polite"
+              hidden
+            ></span>
+          </a>
+
+          <div class="nav-auth" id="authArea">
+            <a href="login.html" class="button button-small button-outline">
+              შესვლა
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <p class="eyebrow">ახალი ინგრედიენტები, ყოველდღე</p>
+
+            <h1>
+              კარგი საჭმელი.<br />
+              <span>კარგი განწყობა.</span>
+            </h1>
+
+            <p class="hero-description">
+              შენი საყვარელი გემოები ერთ სივრცეში. აღმოაჩინე ჩვენი მენიუ და
+              აირჩიე ის, რაც დღეს ყველაზე მეტად გაგახარებს.
+            </p>
+
+            <div class="hero-actions">
+              <a href="menu.html" class="button button-primary">
+                მენიუს ნახვა →
+              </a>
+
+              <a href="#about" class="button button-outline"> ჩვენ შესახებ </a>
+            </div>
+
+            <p class="hero-note">
+              <span class="status-dot" aria-hidden="true"></span>
+              მომზადებულია სიყვარულით
+            </p>
+          </div>
+
+          <div class="hero-visual">
+            <img
+              class="hero-image"
+              src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1100&q=85"
+              alt="ფერადი სალათი ახალი ბოსტნეულით"
+              width="1100"
+              height="1100"
+              fetchpriority="high"
+            />
+
+            <div class="hero-label">
+              <span aria-hidden="true">✦</span>
+              ახალი. გემრიელი. შენთვის.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about-section" id="about">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">რატომ Food House?</p>
+            <h2>გემო, რომლისთვისაც დაბრუნდები</h2>
+            <p>
+              გვჯერა, რომ კარგი კერძი ხარისხიანი ინგრედიენტებითა და ყურადღებით
+              იწყება.
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">🥬</span>
+              <h3>ახალი ინგრედიენტები</h3>
+              <p>ყურადღებით შერჩეული პროდუქტები შენი საყვარელი კერძებისთვის.</p>
+            </article>
+
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">🍽️</span>
+              <h3>მრავალფეროვანი მენიუ</h3>
+              <p>მსუბუქი სალათებიდან ნოყიერ კერძებამდე — იპოვე შენი გემო.</p>
+            </article>
+
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">🛍️</span>
+              <h3>მარტივი არჩევანი</h3>
+              <p>შედი ანგარიშში, აირჩიე კერძები და მართე შენი შეკვეთები.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="menu-banner">
+            <div>
+              <p class="eyebrow">შენი შემდეგი საყვარელი კერძი</p>
+              <h2>რას მიირთმევ დღეს?</h2>
+            </div>
+
+            <a href="menu.html" class="button button-primary">
+              მენიუს გახსნა →
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <a href="index.html" class="logo"> Food<span>House.</span> </a>
+
+        <p>
+          © <span id="currentYear"></span>
+          Food House. ყველა უფლება დაცულია.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

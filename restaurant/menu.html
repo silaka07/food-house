@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>მენიუ | Food House</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="js/auth.js" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/common.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/menu.js" defer></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-content">
+        <a href="index.html" class="logo"> Food<span>House.</span> </a>
+
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="მენიუს გახსნა"
+          aria-controls="navMenu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav-menu" id="navMenu" aria-label="მთავარი ნავიგაცია">
+          <a href="index.html">მთავარი</a>
+          <a href="menu.html" aria-current="page">მენიუ</a>
+
+          <a href="orders.html" class="orders-link">
+            ჩემი შეკვეთები
+
+            <span
+              class="orders-badge"
+              id="ordersBadge"
+              role="status"
+              aria-live="polite"
+              hidden
+            ></span>
+          </a>
+
+          <div class="nav-auth" id="authArea">
+            <a href="login.html" class="button button-small button-outline">
+              შესვლა
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">აღმოაჩინე შენი საყვარელი გემო</p>
+          <h1>ჩვენი მენიუ</h1>
+          <p>აირჩიე კერძები და დაამატე შენს შეკვეთებში.</p>
+        </div>
+
+        <div class="menu-filters">
+          <div class="form-field">
+            <label for="productSearch">კერძის ძიება</label>
+
+            <input
+              type="search"
+              id="productSearch"
+              placeholder="მაგალითად: ბურგერი"
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="categoryFilter">კატეგორია</label>
+
+            <select id="categoryFilter">
+              <option value="all">ყველა კატეგორია</option>
+            </select>
+          </div>
+        </div>
+
+        <p
+          id="resultsCount"
+          class="results-count"
+          role="status"
+          aria-live="polite"
+        ></p>
+
+        <div
+          id="menuMessage"
+          class="menu-message"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        ></div>
+
+        <div class="products-grid" id="productsGrid"></div>
+
+        <div class="empty-products" id="emptyProducts" hidden>
+          <h2>კერძი ვერ მოიძებნა</h2>
+          <p>შეცვალე საძიებო სიტყვა ან კატეგორია.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <a href="index.html" class="logo"> Food<span>House.</span> </a>
+
+        <p>
+          © <span id="currentYear"></span>
+          Food House. ყველა უფლება დაცულია.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

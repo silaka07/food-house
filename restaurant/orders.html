@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ჩემი შეკვეთები | Food House</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/auth.js" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/common.js" defer></script>
+    <script src="js/orders.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                Food<span>House.</span>
+            </a>
+
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="მენიუს გახსნა"
+                aria-controls="navMenu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav
+                class="nav-menu"
+                id="navMenu"
+                aria-label="მთავარი ნავიგაცია"
+            >
+                <a href="index.html">მთავარი</a>
+                <a href="menu.html">მენიუ</a>
+
+                <a
+                    href="orders.html"
+                    class="orders-link"
+                    aria-current="page"
+                >
+                    ჩემი შეკვეთები
+
+                    <span
+                        class="orders-badge"
+                        id="ordersBadge"
+                        role="status"
+                        aria-live="polite"
+                        hidden
+                    ></span>
+                </a>
+
+                <div class="nav-auth" id="authArea">
+                    <a
+                        href="login.html"
+                        class="button button-small button-outline"
+                    >
+                        შესვლა
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section orders-page">
+        <div class="container">
+            <div class="section-heading">
+                <p class="eyebrow">შენი არჩევანი</p>
+                <h1>ჩემი შეკვეთები</h1>
+                <p>შეცვალე რაოდენობა და გადაამოწმე არჩეული კერძები.</p>
+            </div>
+
+            <p
+                id="ordersMessage"
+                class="form-message"
+                role="status"
+                aria-live="polite"
+            ></p>
+
+            <!-- გამოჩნდება ავტორიზაციის გარეშე -->
+            <section class="orders-state" id="loginRequired" hidden>
+                <span class="orders-state-icon" aria-hidden="true">🔐</span>
+                <h2>გაიარე ავტორიზაცია</h2>
+                <p>შენი შეკვეთების სანახავად შედი ანგარიშში.</p>
+
+                <a href="login.html" class="button button-primary">
+                    შესვლა
+                </a>
+            </section>
+
+            <!-- გამოჩნდება ცარიელი კალათის დროს -->
+            <section class="orders-state" id="emptyOrders" hidden>
+                <span class="orders-state-icon" aria-hidden="true">🛍️</span>
+                <h2>ჯერ არაფერი აგირჩევია</h2>
+                <p>გადადი მენიუში და დაამატე შენი საყვარელი კერძები.</p>
+
+                <a href="menu.html" class="button button-primary">
+                    მენიუს ნახვა →
+                </a>
+            </section>
+
+            <!-- არჩეული პროდუქტები და ჯამური ფასი -->
+            <div class="orders-layout" id="ordersLayout" hidden>
+                <section aria-label="არჩეული პროდუქტები">
+                    <div class="orders-list" id="ordersList"></div>
+                </section>
+
+                <aside class="order-summary">
+                    <h2>შენი არჩევანის ჯამი</h2>
+
+                    <div class="summary-row">
+                        <span>რაოდენობა</span>
+                        <strong id="summaryQuantity">0</strong>
+                    </div>
+
+                    <div class="summary-row summary-total">
+                        <span>ჯამური ფასი</span>
+                        <strong id="summaryTotal">0 ₾</strong>
+                    </div>
+
+                    <a
+                        href="menu.html"
+                        class="button button-outline summary-link"
+                    >
+                        კერძების დამატება
+                    </a>
+
+                    <p class="summary-note">
+                        აქ ნაჩვენებია არჩეული პროდუქტები.
+                        შეკვეთა რესტორანში ჯერ არ გაგზავნილა.
+                    </p>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <a href="index.html" class="logo">
+                Food<span>House.</span>
+            </a>
+
+            <p>
+                © <span id="currentYear"></span>
+                Food House. ყველა უფლება დაცულია.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
